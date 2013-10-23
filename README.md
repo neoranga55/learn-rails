@@ -1,4 +1,3 @@
-learn-rails
-===========
-
-Project to start learning Ruby on Rails and create a fully working webapp
+rning Rails
+==
+Learning Rails with a tutorial from the RailsApps project.
