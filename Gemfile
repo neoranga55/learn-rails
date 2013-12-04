@@ -2,10 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'rails', '4.0.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -17,7 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+# gem 'therubyracer', platforms: :ruby # Linux doesn’t have a built-in JavaScript interpreter and some distros require this
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -59,4 +56,10 @@ group :development do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'sqlite3' # Use sqlite3 as the database for Active Record in Nitrous.io development environment
+end
+group :production do
+  gem 'pg' # PostgreSQL (Heroku doesn´t support SQLlite)
+  gem 'rails_12factor' # Heroku requires this to support logging and server CSS/JS assets correctly
+  gem 'thin' # Thin web server
 end
